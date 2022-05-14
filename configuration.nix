@@ -72,6 +72,8 @@
     ];
   };
 
+  programs.steam.enable = true;
+
   nix = {
     package = pkgs.nixUnstable;
     extraOptions = ''
