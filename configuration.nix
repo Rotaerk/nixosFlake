@@ -44,6 +44,8 @@
       displayManager.lightdm.enable = true;
       desktopManager.xterm.enable = true;
     };
+
+    joycond.enable = true; # For Nintendo Pro Controller...
   };
 
   hardware = {
