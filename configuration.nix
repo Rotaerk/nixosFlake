@@ -56,6 +56,8 @@
       enable = true;
       driSupport32Bit = true;
     };
+
+    steam-hardware.enable = true;
   };
 
   environment = {
