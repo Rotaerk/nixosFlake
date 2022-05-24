@@ -33,6 +33,11 @@
   };
 
   services = {
+    logind.extraConfig = ''
+      # don't shutdown when power button is pressed
+      HandlePowerKey=ignore
+    '';
+
     xserver = {
       enable = true;
       layout = "us,us";
