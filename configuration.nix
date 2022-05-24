@@ -48,6 +48,16 @@
 
       displayManager.lightdm.enable = true;
       desktopManager.xterm.enable = true;
+
+      # Disables the PS4 controller's touchpad.
+      inputClassSections = [
+        ''
+        Identifier "ds-touchpad"
+        Driver "libinput"
+        MatchProduct "Wireless Controller Touchpad"
+        Option "Ignore" "True"
+        ''
+      ];
     };
 
     joycond.enable = true; # For Nintendo Pro Controller...
