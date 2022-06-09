@@ -59,11 +59,11 @@
         ''
       ];
     };
-
-    joycond.enable = true; # For Nintendo Pro Controller...
   };
 
   hardware = {
+    bluetooth.enable = true;
+
     pulseaudio = {
       enable = true;
       support32Bit = true;
