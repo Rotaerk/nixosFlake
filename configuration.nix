@@ -38,6 +38,9 @@
       HandlePowerKey=ignore
     '';
 
+    # Needed for bashmount to work nicely.
+    udisks2.enable = true;
+
     xserver = {
       enable = true;
       layout = "us,us";
