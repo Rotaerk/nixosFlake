@@ -45,7 +45,7 @@
       enable = true;
       layout = "us,us";
       xkbVariant = "dvorak,";
-      xkbOptions = "ctrl:swapcaps,grp:ctrl_alt_toggle";
+      xkbOptions = "ctrl:swapcaps,grp:toggle";
 
       videoDrivers = ["nvidia"];
 
