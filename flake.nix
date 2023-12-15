@@ -5,11 +5,11 @@
     nixosConfigurations = {
       amaethon = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./amaethon/configuration.nix ];
+        modules = [ ./common.nix ./amaethon/configuration.nix ];
       };
       taliesin = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./taliesin/configuration.nix ];
+        modules = [ ./common.nix ./taliesin/configuration.nix ];
       };
     };
   };
