@@ -17,7 +17,25 @@
 
   networking.hostName = "taliesin";
 
-  services.xserver.videoDrivers = ["nvidia"];
+  services = {
+    logind.lidSwitch = "ignore";
+
+    xserver = {
+      dpi = 160;
+
+      libinput = {
+        enable = true;
+
+        touchpad = {
+          accelSpeed = "0.5";
+          naturalScrolling = true;
+          disableWhileTyping = true;
+        };
+      };
+
+      videoDrivers = ["nvidia"];
+    };
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

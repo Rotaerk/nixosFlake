@@ -30,8 +30,6 @@
       xkbVariant = "dvorak,";
       xkbOptions = "ctrl:swapcaps,grp:toggle";
 
-      videoDrivers = ["nvidia"];
-
       displayManager.lightdm.enable = true;
       desktopManager.xterm.enable = true;
 
