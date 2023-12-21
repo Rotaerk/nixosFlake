@@ -21,6 +21,8 @@
       HandlePowerKey=ignore
     '';
 
+    sshd.enable = true;
+
     # Needed for bashmount to work nicely.
     udisks2.enable = true;
 
