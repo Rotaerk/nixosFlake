@@ -28,9 +28,12 @@
 
     xserver = {
       enable = true;
-      layout = "us,us";
-      xkbVariant = "dvorak,";
-      xkbOptions = "ctrl:swapcaps,grp:toggle";
+
+      xkb = {
+        layout = "us,us";
+        variant = "dvorak,";
+        options = "ctrl:swapcaps,grp:toggle";
+      };
 
       displayManager.lightdm.enable = true;
       desktopManager.xterm.enable = true;
@@ -55,9 +58,9 @@
       support32Bit = true;
     };
 
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport32Bit = true;
+      enable32Bit = true;
     };
 
     steam-hardware.enable = true;
@@ -80,7 +83,7 @@
   programs.steam.enable = true;
 
   nix = {
-    package = pkgs.nixUnstable;
+    package = pkgs.nixVersions.latest;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
