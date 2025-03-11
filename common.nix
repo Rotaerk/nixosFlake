@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  lib = pkgs.lib;
+in
 {
   networking.networkmanager.enable = true;
 
@@ -15,11 +18,23 @@
     useXkbConfig = true;
   };
 
+  security.rtkit.enable = true; # A recommended option to accompany pipewire
+
   services = {
     logind.extraConfig = ''
       # don't shutdown when power button is pressed
       HandlePowerKey=ignore
     '';
+
+    pipewire = {
+      enable = true;
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+      pulse.enable = true;
+      jack.enable = false;
+    };
 
     sshd.enable = true;
 
@@ -50,13 +65,12 @@
     };
   };
 
+  sound.enable = lib.mkForce false; # disable alsa
+
   hardware = {
     bluetooth.enable = true;
 
-    pulseaudio = {
-      enable = true;
-      support32Bit = true;
-    };
+    pulseaudio.enable = lib.mkForce false;
 
     graphics = {
       enable = true;
