@@ -65,12 +65,8 @@ in
     };
   };
 
-  sound.enable = lib.mkForce false; # disable alsa
-
   hardware = {
     bluetooth.enable = true;
-
-    pulseaudio.enable = lib.mkForce false;
 
     graphics = {
       enable = true;

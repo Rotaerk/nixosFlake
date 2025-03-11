@@ -15,6 +15,8 @@
     efi.canTouchEfiVariables = true;
   };
 
+  hardware.nvidia.open = true;
+
   networking.hostName = "amaethon";
 
   services.xserver.videoDrivers = ["nvidia"];
